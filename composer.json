@@ -7,7 +7,14 @@
 		}
 	],
 	"require": {
-		"doctrine/orm": "v2.5.6",
-	}
+		"doctrine/orm" : "v2.5.6"
+	},
+    "autoload": {
+    	"psr-4": {
+    		"Cosmonaut\\Utils\\":"framework/utils",
+    		"Cosmonaut\\":"framework",
+    		"App\\Controllers\\":"app/controllers"
+    	}
+    }
 }
 

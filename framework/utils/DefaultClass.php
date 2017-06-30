@@ -1,13 +1,10 @@
 <?php
 
+namespace Cosmonaut\Utils;
+
 /**
 * 
 */
 class DefaultClass
 {
-	
-	function __construct(argument)
-	{
-	}
-	
 }

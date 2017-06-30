@@ -1,25 +1,25 @@
 <?php 
 
-use Doctrine\ORM\EntityManager,	Doctrine\ORM\Configuration, Cosmonaut\Config;
-
 require_once "vendor/autoload.php";
 
-$config = new Config();
+use Cosmonaut\Utils\Config;
+use Cosmonaut\Utils\DataBase;
+use Cosmonaut\Cosmonaut;
 
-$config = new Configuration;
-$config->setMetadataDriverImpl($config->newDefaultAnnotationDriver('/Model'));
-$config->setProxyDir('/Proxy');
-$config->setProxyNamespace('\Proxies');
+
+$config = Config::getInstance();
+$config->load("../config/main.json");
 
 $connectionOptions = array(
-	'driver'   => 'pdo_mysql',
-	'user'     => 'root',
-	'password' => 'master',
-	'dbname'   => 'cosmonaut'
+	'driver'   => Cosmonaut::config()->get("db.driver"),
+	'user'     => Cosmonaut::config()->get("db.user"),
+	'password' => Cosmonaut::config()->get("db.password"),
+	'dbname'   => Cosmonaut::config()->get("db.dbname")
 );
 
-$em = EntityManager::create($connectionOptions, $config);
-
+// echo Cosmonaut::session()->get('teste');
+Cosmonaut::db()->load($connectionOptions);
+Cosmonaut::router()->load($_SERVER['REQUEST_URI']);
 
 
 
