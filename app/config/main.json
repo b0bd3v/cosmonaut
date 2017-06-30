@@ -1,0 +1,10 @@
+{
+	"db" : [
+		{
+			"driver"   => "pdo_mysql",
+			"user"     => "root",
+			"password" => "master",
+			"dbname"   => "cosmonaut"
+		}
+	]
+}

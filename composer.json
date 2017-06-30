@@ -1,0 +1,28 @@
+{
+	"name": "roberto/frame",
+	"authors": [
+		{
+			"name": "Roberto",
+			"email": "roberto.martins.info@gmail.com"
+		}
+	],
+	"repositories":[
+		{
+			"type":"package",
+	        "package": {
+	          "name": "cosmonaut",
+	          "version":"dev",
+	          "source": {
+	              "url": "https://github.com/robertomartins/cosmonaut.git",
+	              "type": "git",
+	              "reference":"dev"
+	            }
+	        }
+		}
+	],
+	"require": {
+		"doctrine/orm": "v2.5.6",
+		"cosmonaut" : "dev"
+	}
+}
+
