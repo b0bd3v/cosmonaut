@@ -30,7 +30,6 @@ class Router extends Singleton
 		if(is_object($pattern)){
 			$controller = 'App\\Controllers\\' . ucfirst($pattern->pattern->controller) . 'Controller';
 			$method = 'action' . ucfirst($pattern->pattern->action);
-			$id = $pattern->id;
 		}
 			
 			
@@ -42,10 +41,10 @@ class Router extends Singleton
 			$r = new \ReflectionClass($controller);
 			$objController = $r->newInstance();
 			
-			if(!isset($id)){
+			if(!isset($pattern->id)){
 				$controllerReturn = $objController->$method();
 			}else{
-				$controllerReturn = $objController->$method($id);
+				$controllerReturn = $objController->$method($pattern->id);
 			}
 			if(is_array($controllerReturn)){
 				$controllerReturn = json_encode($controllerReturn);
@@ -103,6 +102,9 @@ class Router extends Singleton
 			
 			$currentUrlParsed = $this->parse($pattern->url);
 			foreach ($currentUrlParsed as $index => $word) {
+				if(!isset($parsedUrl[$index])){
+					break;
+				}
 				if(!$this->isReservedWord($word)){
 					if($currentUrlParsed[$index] == $parsedUrl[$index]){
 						$patternToReturn = $pattern;
@@ -110,7 +112,11 @@ class Router extends Singleton
 						break;
 					}
 				}else{
-
+					if($currentUrlParsed[$index] == ":" . "id"){
+						if(isset($parsedUrl[$index])){
+							$id = $parsedUrl[$index];
+						}
+					}
 				}
 			}
 		}
@@ -118,8 +124,10 @@ class Router extends Singleton
 		$objectReturn = new \stdClass;
 		$objectReturn->pattern = $patternToReturn;
 		$objectReturn->parsedUrl = $parsedUrl;
-
-		$objectReturn->id = 0;
+		
+		if(isset($id)){
+			$objectReturn->id = $id;
+		}
 
 		return $objectReturn;
 

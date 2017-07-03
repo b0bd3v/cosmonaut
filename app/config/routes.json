@@ -16,5 +16,11 @@
 		"url" : "/clientes/:id",
 		"controller" : "Clientes",
 		"action" : "index"
+	},
+	{
+		"name" : "clientes_api_2",
+		"url" : "/clientes/teste/:id",
+		"controller" : "Clientes",
+		"action" : "default"
 	}
 ]

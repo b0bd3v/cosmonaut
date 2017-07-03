@@ -10,13 +10,15 @@ class ClientesController extends \Cosmonaut\Controllers\ApiController
 	
 	}
 
-	public function default()
+	public function actionDefault($id = null)
 	{
-		return array('teste' => 'teste' );
+		echo 'ID: ' . $id . '<br>';
+		return array('teste' => 'teste');
 	}
 
 	public function actionIndex($id = null)
 	{
+		echo 'actionIndex';
 		return array('teste' => $id);
 	}
 }

@@ -1,4 +1,7 @@
 <?php
+
+namespace Cosmonaut\Controllers;
+
 /**
 * 
 */
