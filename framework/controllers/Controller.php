@@ -9,10 +9,7 @@ namespace Cosmonaut\Controllers;
 * @version  $Revision: 1 $
 * @access   public
 */
-class Controller extends DefaultClass
+class Controller extends \Cosmonaut\Utils\DefaultClass
 {
-	function __construct(argument)
-	{
-		# code...
-	}
+	
 }

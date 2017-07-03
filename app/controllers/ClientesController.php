@@ -3,7 +3,7 @@ namespace App\Controllers;
 /**
 * 
 */
-class ClientesController// extends Controller
+class ClientesController extends \Cosmonaut\Controllers\ApiController
 {
 	public function __construct()
 	{

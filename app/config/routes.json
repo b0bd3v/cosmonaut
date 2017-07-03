@@ -1,0 +1,20 @@
+[
+	{
+		"name" : "home",
+		"url" : "/",
+		"controller" : "Main",
+		"action" : "index"
+	},
+	{
+		"name" : "pages",
+		"url" : "/page/:id",
+		"controller" : "Pages",
+		"action" : "index"
+	},
+	{
+		"name" : "clientes_api",
+		"url" : "/clientes/:id",
+		"controller" : "Clientes",
+		"action" : "index"
+	}
+]

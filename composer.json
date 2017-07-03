@@ -12,6 +12,7 @@
     "autoload": {
     	"psr-4": {
     		"Cosmonaut\\Utils\\":"framework/utils",
+    		"Cosmonaut\\Controllers\\":"framework/controllers",
     		"Cosmonaut\\":"framework",
     		"App\\Controllers\\":"app/controllers"
     	}
