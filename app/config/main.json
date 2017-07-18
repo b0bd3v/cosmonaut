@@ -1,4 +1,6 @@
 {
+	"main_module": "app",
+	"environment" : "development",
 	"db" : {
 		"driver": "pdo_mysql",
 		"user" : "root",

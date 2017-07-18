@@ -5,7 +5,7 @@ namespace Cosmonaut\Controllers;
 /**
 * 
 */
-class ApiController extends \Cosmonaut\Utils\DefaultClass
+class ApiController extends \Cosmonaut\Controllers\BaseController
 {
 	
 	public function actionGET($id = null)

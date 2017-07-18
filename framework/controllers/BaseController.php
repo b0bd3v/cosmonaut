@@ -2,19 +2,14 @@
 
 namespace Cosmonaut\Controllers;
 /**
-* Main controller class
+* Base controller
 *
 * @package  Controllers
 * @author   Roberto Martins da Silva <roberto.martins.info@gmail.com>
 * @version  $Revision: 1 $
 * @access   public
 */
-class Controller extends \Cosmonaut\Controllers\BaseController
+class BaseController extends \Cosmonaut\Utils\DefaultClass
 {
 	
-	private function getView()
-	{
-		
-	}
-
 }
